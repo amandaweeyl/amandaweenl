@@ -51,10 +51,6 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover {
-  color: rgb(248, 211, 128);
-}
-
 image-slot,
 [style*="cursor:pointer"] {
   color: transparent;
@@ -68,8 +64,23 @@ a,
   -webkit-tap-highlight-color: transparent;
 }
 
-[style*="cursor:pointer"]:hover .thumb-cap {
-  color: rgb(248, 211, 128) !important;
+/* Hover states only for devices with a real mouse/trackpad — on touch,
+   :hover fires on tap and can stick until the next tap elsewhere, so
+   phones/tablets rely on the :active dim below instead. */
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: rgb(248, 211, 128) !important;
+    transition: color 0.2s ease;
+  }
+
+  [style*="cursor:pointer"]:hover {
+    color: rgb(248, 211, 128) !important;
+    transition: color 0.2s ease;
+  }
+
+  [style*="cursor:pointer"]:hover .thumb-cap {
+    color: rgb(248, 211, 128) !important;
+  }
 }
 
 [style*="cursor:pointer"]:active {
