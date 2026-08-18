@@ -34,6 +34,7 @@ export default function IndexView({ projects, onProjectClick }) {
           <div
             key={project.id}
             onClick={() => onProjectClick(project.slug)}
+            className="clickable"
             style={{ display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
           >
             <div style={{ width: '100%', aspectRatio: '1 / 1', position: 'relative', overflow: 'hidden', background: '#111' }}>

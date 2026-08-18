@@ -79,6 +79,7 @@ export default function ProjectView({ project, onNavigate }) {
       <div style={{ textAlign: 'center', marginTop: '4rem', fontSize: '1.8rem' }}>
         <span
           onClick={() => onNavigate('index')}
+          className="clickable"
           style={{ cursor: 'pointer', textDecoration: 'underline', color: 'rgba(255,255,255,0.85)' }}
         >
           Return to Selected Works

@@ -12,7 +12,7 @@ export default function Header({ onNavigate }) {
       <div>
         <div
           onClick={() => onNavigate('index')}
-          className="brand"
+          className="brand clickable"
           style={{
             cursor: 'pointer',
             fontSize: '3.8rem',
@@ -31,6 +31,7 @@ export default function Header({ onNavigate }) {
       <div style={{ textAlign: 'right', flexShrink: 0 }}>
         <div
           onClick={() => onNavigate('about')}
+          className="clickable"
           style={{
             cursor: 'pointer',
             fontSize: '2rem',

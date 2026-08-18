@@ -71,6 +71,7 @@ export default function AboutView({ about, onNavigate }) {
           <div style={{ marginTop: '1.2em' }}>
             <span
               onClick={() => onNavigate('index')}
+              className="clickable"
               style={{ cursor: 'pointer', textDecoration: 'underline' }}
             >
               View Selected Works

@@ -51,39 +51,39 @@ a {
   transition: color 0.2s ease;
 }
 
-image-slot,
-[style*="cursor:pointer"] {
-  color: transparent;
-}
-
-[onclick],
-[onClick],
 a,
 .thumb-cap,
-[style*="cursor:pointer"] {
+.clickable {
   -webkit-tap-highlight-color: transparent;
 }
 
 /* Hover states only for devices with a real mouse/trackpad — on touch,
    :hover fires on tap and can stick until the next tap elsewhere, so
-   phones/tablets rely on the :active dim below instead. */
+   phones/tablets rely on the :active dim below instead.
+
+   Note: these target explicit classes rather than [style*="cursor:pointer"].
+   Views mounted client-side (About/Project pages — see Portfolio.jsx's
+   currentView useEffect) get their inline styles serialized by the
+   browser's CSSOM as "cursor: pointer" (with a space), which does not
+   match a "cursor:pointer" (no space) attribute selector the way
+   server-rendered markup does. Classes sidestep that entirely. */
 @media (hover: hover) and (pointer: fine) {
   a:hover {
     color: rgb(248, 211, 128) !important;
     transition: color 0.2s ease;
   }
 
-  [style*="cursor:pointer"]:hover {
+  .clickable:hover {
     color: rgb(248, 211, 128) !important;
     transition: color 0.2s ease;
   }
 
-  [style*="cursor:pointer"]:hover .thumb-cap {
+  .clickable:hover .thumb-cap {
     color: rgb(248, 211, 128) !important;
   }
 }
 
-[style*="cursor:pointer"]:active {
+.clickable:active {
   opacity: 0.7;
 }
 
@@ -146,7 +146,7 @@ a,
   .proj-intro {
     max-width: 100% !important;
   }
-  header [style*="cursor:pointer"] {
+  header .clickable {
     padding: 0.4rem 0;
   }
 }
