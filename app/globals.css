@@ -135,8 +135,7 @@ a,
   .proj-intro {
     max-width: 100% !important;
   }
-  header [onclick],
-  header [onClick] {
+  header [style*="cursor:pointer"] {
     padding: 0.4rem 0;
   }
 }
