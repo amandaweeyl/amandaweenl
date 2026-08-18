@@ -38,8 +38,8 @@ export default function IndexView({ projects, onProjectClick }) {
           >
             <div style={{ width: '100%', aspectRatio: '1 / 1', position: 'relative', overflow: 'hidden', background: '#111' }}>
               <Image
-                src={project.images[0].src}
-                alt={project.images[0].alt}
+                src={project.thumbnail.src}
+                alt={project.thumbnail.alt}
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
